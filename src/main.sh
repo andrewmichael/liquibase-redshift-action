@@ -4,8 +4,10 @@ ln -s /github/workspace /workspace
 
 cd /workspace
 
+ls
+
 echo "running $INPUT_LIQUIBASE_CMD"
-applyOutput=$(source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
+applyOutput=$(cd /workspace && source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
 applyExitCode=${?}
 
 # Exit code of 0 indicates success. Print the output and exit.
