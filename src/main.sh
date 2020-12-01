@@ -1,10 +1,11 @@
 #!/bin/bash
+cd /
+rm workspace
 
 ln -s /github/workspace /workspace
-
 cd /workspace
 
-ls
+ls -la
 
 echo "running $INPUT_LIQUIBASE_CMD"
 applyOutput=$(cd /workspace && source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
