@@ -9,8 +9,8 @@ if [ ${applyExitCode} -eq 0 ]; then
     echo "successfully ran $INPUT_LIQUIBASE_CMD"
 else
     echo "error running $INPUT_LIQUIBASE_CMD"
-if
+fi
 
 echo "${applyOutput}"
 
-#exit ${applyExitCode}
+exit ${applyExitCode}
