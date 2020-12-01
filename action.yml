@@ -1,0 +1,18 @@
+name: 'Liquibase Redshift Action'
+description: 'Wraps liquibase redshift'
+author: 'andrewmbourne'
+branding:
+  icon: 'terminal'
+  color: 'purple'
+inputs:
+  db_Host:
+    description: 'over ride the db host from the creds file'
+  liquibase_cmd: 
+    description: 'the command to execute'
+    required: true
+outputs:
+  actions_output:
+    description: 'DB Change ouput'
+runs:
+  using: 'docker'
+  image: './Dockerfile'
