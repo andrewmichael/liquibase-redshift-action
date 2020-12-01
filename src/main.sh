@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /
-rm workspace
+rmdir workspace
 
 ln -s /github/workspace /
 cd /workspace
