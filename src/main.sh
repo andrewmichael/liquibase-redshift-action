@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "running $INPUT_LIQUIBASE_CMD"
 applyOutput=$(cd /github/workspace && source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
 applyExitCode=${?}
@@ -12,4 +13,4 @@ if
 
 echo "${applyOutput}"
 
-exit ${applyExitCode}
+#exit ${applyExitCode}
