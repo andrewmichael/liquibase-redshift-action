@@ -2,7 +2,7 @@
 cd /
 rm workspace
 
-ln -s /github/workspace /workspace
+ln -s /github/workspace /
 cd /workspace
 
 ls -la
