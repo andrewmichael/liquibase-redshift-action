@@ -1,14 +1,9 @@
 #!/bin/bash
-cd /
-rmdir workspace
-
-ln -s /github/workspace /
-cd /workspace
 
 ls -la
 
 echo "running $INPUT_LIQUIBASE_CMD"
-applyOutput=$(cd /workspace && source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
+applyOutput=$(cd /github/workspace && source creds.sh && /usr/local/bin/entrypoint.sh liquibase $INPUT_LIQUIBASE_CMD 2>&1)
 applyExitCode=${?}
 
 # Exit code of 0 indicates success. Print the output and exit.
